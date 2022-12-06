@@ -1,0 +1,79 @@
+* {
+    font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+}
+
+#container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    font-size: 32px;
+    text-transform: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    text-transform: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+label {
+    max-width: 800px;
+    text-align: left;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+p {
+    text-indent: 30px;
+    max-width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border: 1px solid black;
+}
+
+.section-container > .chart,
+.section-container > .text-container {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.chart,
+.text-container {
+    padding: 36px;
+}
+
+/* Position Sticky Demo */
+
+.sticky-layout {
+    display: flex;
+    align-items: flex-start;
+}
+
+.sticky-layout > .sticky-side {
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+

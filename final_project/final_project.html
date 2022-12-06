@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climbing</title>
+    <link href="/final_project/d3-geomap/d3-geomap.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Rock Climbing in USA</h1>
+        <p>
+            Being in nature is such a wonderful feeling. The peace and tranquility of being on the trail is one of my greatest pleasures, 
+            but I need a reward at the end of a hike. I need a magnificent view, a beautiful lake, or an aesthetically pleasing activity to spectate. 
+            Yeah, I know, that last one doesn’t really make sense, but if you hike to Red Rock, Joshua Tree, Yosemite, you get to experience all three of the above. 
+            This is where I fell in love with rock climbing.
+        </p>
+        <br>
+        <p>
+            I am really into rock climbing but I still don't have a clear picture about how's the rock climbing trend is like in the USA. To satisfy my curiosity,
+            I decided to do visualization for the climbing data in the USA. My visualization can probably show how popular is rock climbing in the USA now and how's
+            USA rock climbers performances.
+        </p>
+        
+        <h2>The climbing routes distribution in the USA</h2>
+        <div class="d3-geomap" id="map">
+            <script src="//unpkg.com/d3@5/dist/d3.min.js"></script>
+            <script src="//unpkg.com/topojson@3/dist/topojson.min.js"></script>
+            <script src="d3-geomap/d3-geomap.min.js"></script>
+            <script src="map.js"></script> 
+        </div>
+        <p>
+            The choropleth map represents the number of sports climbing routes that are logged at <a href="https://www.8a.nu/" target="_blank">8a.nu</a>.
+            The darker the color, the more routes having in those areas.
+        </p>
+        <br>
+        <p>
+            From the map, we can tell that there are more rock climbing routes in the west coast compared to the east coast. This meets my perception that most of the
+            world class climbing areas are in the west such as Yosemite National park in California and Red Rock National Park in Nevada. Midwest is more flat than west
+            and east coast and thus there are less climbing areas than other parts of the states.
+        </p>
+    
+
+        <section class="section-container sticky-layout">
+            <div id="bar" class="chart sticky-side">
+                <h3 style="text-align:center">How Hard Do People Climb</h2>
+                <script src="https://d3js.org/d3.v7.min.js"></script>
+                <script src="bar.js"></script>
+            </div>
+            <div class="text-container">
+                The bar chart on the left shows how many climbers have sent (finished the routes without falling) the routes of that grade that were recorded on  <a href="https://www.8a.nu/" target="_blank">8a.nu</a>. 
+                The grade that are sent by the most people is 5.12a which is a hard grade for unprofessional climbers. When the grades getting harder, the number of people sent decreased significantly.
+                The routes above 5.14 can almost only be sent by professional climbers.
+            </div>
+        </section>
+
+        <h2>Climbers by Sex and the Highest Level They Sent</h2>
+        <div id="bubble">
+            <script src="bubble.js"></script>
+        </div>
+        <p>
+            Each bubble in a bubble chart represents a single climber. Blue ones are male climbers and pink ones are female climbers. The size of the bubble tells the highest grade of sports climbing the climber has achieved.
+        </p>
+        <br>
+        <p>
+            From the bubble chart, we can easily tell that the number of male climbers is much more the number of female climbers. Male climbers also can achieve higher grades.
+        </p>
+
+        <h2>Relationship between Grade and BMI</h2>
+        <div id="box_male">
+            <script src="box_male.js"></script>
+        </div>
+        <div id="box_male">
+            <script src="box_female.js"></script>
+        </div>
+        <p>
+           The box plots shows the relationship between highest climbing grade and BMI. Body Mass Index (BMI) is calculated with height and weight. 
+           Height and weight are always considered to be major factors that could affect climbers' climbing performances. I want to visualize the relationship 
+           between Climbing grades for each climber and their BMI to see whether it truly can affect people's performances.
+        </p>
+        <br>
+        <p>
+            There appears to be a downward trend in BMI as the max grade of the climber increases. I think this makes sense as climbing is hard, and to get 
+            into the 5.12+ range is difficult. You need to be dedicated and you need to practice. If you are that dedicated to climbing, you are going to have enough willpower.
+        </p>
+        
+        <div id="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                Overall, the rock climbing is popular in the USA. From natural resources prospect, west coast has the best climbing routes compared to east coast and midwest.
+                Most of the recorded climbers can send grades around 5.12 for sports climbing. Male climbers are much more than female climbers.
+                For how to improve the climbing performance, weight control could be one of the solution since lower BMI can in general gives a better grade.
+            </p>
+        </div>
+
+        <div id="process">
+            <h2>Process and Challenges</h2>
+            <h3>My Story</h3>
+            <p>
+                As I said before, I am really devoted to rock climbing now, especially interested in outdoor sports climbing. I also had chance to go several outdoor
+                rock climbing areas in the USA to try to send some routes. When thinking about this project, I want to do a topic that I have passion about which is rock climbing.
+                As a beginnin rock climber, the first thing I'm curious about is which part in the USA have the most and best climbing routes. I also want to know how's the performance of 
+                climbers in the USA. How hard the routes most of the climbers can send and is there are differences between male and female. Last but not least, I also want
+                to know what are the factors can probably impact the climbing ability. The first factor came to my mind was height and weight. I want to use data to see if higher
+                and thiner climber can have better performances.
+            </p>
+            <h3>Data Selection</h3>
+            <p>
+                I obtained the data from Kaggle. The owner of the project has scraped the data from <a href="https://www.8a.nu/" target="_blank">8a.nu</a>,
+                a climbing community website where climbers can record their climbing achievements. I selected this data because it is probably the easiest way
+                for me to get climbing data. Since climbing is still a niche sports, it is hard to find really comprehensive data.
+            </p>
+            <br>
+            <p>
+                I have to say this data set is inherently biased. The data comes from a website where users log their climbs and the people who will go to the 
+                trouble of tracking this information on a website are very serious about their hobby. Hence, the data will suffer from self selection bias and 
+                it will tend to over represent the serious, strong climber. 
+            </p>
+            <h3>Charts Design</h3>
+            <p>
+                To see where is the best place to climb in the US, I draw a choropleth map to show which states has more climbing routes. The darker the color, the more
+                routes having in the area. Using a map here can tell clearly where are the best climbing area.
+            </p>
+            <p>
+                For how many people sent in each grades, I choose a barchart and display the grade on x axis from low to high. It is easier for me to see which grade level are 
+                sent by more people, are those grades easy or hard.
+            </p>
+            <p>
+                I use bubble chart to show gender differences among climbers between male and female. The bubble size represents the highest level achieved by a climber.
+                This picture clearly shows the difference between females and males in rock climbing.
+            </p>
+            <p>
+                Lastly, I draw a box plot for both male and female with their best climbing grades and BMI. Box plot can not only show the trend of relationship between the two variables
+                but also can tell the distribution of BMI in each grade level. 
+            </p>
+
+            <h3>Challenges</h3>
+            <p>
+                First of all, codes like choropleth graph and box plots are obtained from D3 galleries. When I was plotting my own charts based on the examples, I find it took time for
+                me to understande their code and make appropriate changes.
+            </p>
+            <p>
+                For data cleaning, since the data is scraped from website, there are some messy data. I had some back and force to obtain a fully cleaned dataset.
+            </p>
+            <p>
+                Changing the layout is also hard for me. I'm not familiar with javascript and .css file. Sometime, I have no clue on how to place my chart in the place
+                I want it to be.
+            </p>
+
+            <h3>Could be improved</h3>
+            <p>
+                (1) Using more charts to make my story more comprehensive.
+                (2) Scraping data from "mountain project" (another rock climbing website) where I believe could be a better data source.
+            </p>
+        </div>
+
+
+</body>
+</html>
